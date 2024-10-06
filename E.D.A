@@ -1,0 +1,32 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.preprocessing import RobustScaler, LabelEncoder
+from sklearn.feature_selection import SelectKBest, chi2
+from sklearn.impute import SimpleImputer, KNNImputer
+from sklearn.preprocessing import RobustScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import cross_validate
+from sklearn.metrics import make_scorer, accuracy_score, f1_score, recall_score
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.model_selection import train_test_split
+import joblib
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.callbacks import EarlyStopping
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_seq_item', None)
+pd.set_option('display.float_format', '{:.2f}'.format)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_seq_item', None)
+pd.set_option('display.float_format', '{:.2f}'.format)
+df=pd.read_csv("/content/PS_20174392719_1491204439457_log.csv")
+df.drop("isFlaggedFraud",axis=1,inplace=True)
+df.head()
+
